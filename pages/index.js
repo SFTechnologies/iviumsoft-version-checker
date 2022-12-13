@@ -23,7 +23,11 @@ export async function getStaticProps() {
   const updateAvailable = currentVersion !== process.env.PYVIUM_IVIUMSOFT_VERSION
 
   if (updateAvailable) {
-
+    const text = `✨ New IviumSoft version ✨\nRelease: ${currentVersion} \nActual version: ${process.env.PYVIUM_IVIUMSOFT_VERSION}`
+    await fetch(process.env.VERSION_ALERT_SLACK_WEBHOOK_URL, {
+      body: JSON.stringify({text}),
+      method: "POST"
+    })
   }
 
   return {
