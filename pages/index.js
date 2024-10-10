@@ -5,7 +5,7 @@ export default function Home({currentVersion, pyviumVersion, updateAvailable}) {
   return (
     <div >
       The current version is {currentVersion} <br />
-      Pyvium use the DLL from {pyviumVersion}
+      Pyvium uses the DLL from {pyviumVersion}
       {updateAvailable && <> &rarr; UPDATE AVAILABLE!!!</>}
     </div>
   )
